@@ -15,7 +15,9 @@ rule that must hold becomes a test in `check.sh`, a lint rule or a hook, and its
   it stores data, a dependency that ships, an outside service) are the founder's; each is
   recorded in the issue that decided it. Never settle one in code.
 - **Edge cases:** the visible scenarios are in `fixtures/`, one folder per failure class.
-- **Shipping:** changes reach `main` only through a pull request that the integrator merges.
+- **Shipping:** changes reach `main` only through a pull request, and the founder merges every
+  one on GitHub; `build` leaves a "Ready for your merge" comment once it is reviewed and green.
+  Merging to `main` deploys to production: yes (GitHub Pages serves `main`).
 - **This product's own rules:**
   - Colour, font and spacing come only from `tokens.css` (stylelint).
   - The page is valid HTML (html-validate) and passes axe at 390px and 1440px (Playwright).
